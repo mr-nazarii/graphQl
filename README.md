@@ -1,2 +1,2 @@
-# graphQl
+# graphQlserver
 My GraphQL practice
