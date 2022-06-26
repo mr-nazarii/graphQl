@@ -1,3 +1,4 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import { graphql } from "graphql";
 import { Schema } from "./schema/schema";
@@ -11,6 +12,8 @@ dotenv.config({ path: __dirname + "/.env" });
 mongoose.connect(process.env.DATABASE_URL as any);
 
 const db = mongoose.connection;
+
+app.use(cors());
 
 db.on("error", (err: any) =>
   console.log("Something went wrong " + err.message)
